@@ -1,0 +1,165 @@
+\documentclass{beamer}
+\usepackage[english,italian]{babel}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}	%caratteri accentati
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}	% define new command tab
+
+\usepackage[font=scriptsize]{subcaption}
+\usepackage[most]{tcolorbox}
+
+%insert code
+\usepackage{listings}
+
+%------------------------------------------------
+%		Trasparenza liste
+%------------------------------------------------
+\setbeamercovered{transparent}
+
+
+%------------------------------------------------
+%		IMAGE DEFINITIONS
+%------------------------------------------------
+\usepackage{changepage}
+
+\usepackage{pgf,tikz}
+\usepackage{graphicx}
+
+ \pgfdeclareimage[height = 7cm]{img:wannacry}{./images/wannacry_01.png}
+% \pgfdeclareimage[height=4cm]{socialNetwork}{./images/Graph/socialNetwork}
+
+
+\definecolor{blueHKBU}{RGB}{0,0,210}
+
+\usetheme{Padova}
+
+\title{\vspace{1cm}Ransomware\\\Large [Malicious Software]}
+\subtitle{\vspace{-0cm}{\large COMP7330 Information Systems Security and Auditing}\\ \vspace{0.5cm} \large GROUP 11}
+\author{%\vspace{0.5cm}%\textbf{Laureando}:\\
+	Matteo Azzarelli \hspace{5cm} Nurzhan Izdauov}
+% 	Matteo Azzarelli\\ Nurzhan Izdauov}
+\date{\vspace{2.7cm}\color{black}{\footnotesize{10 April 2019}}}
+
+
+
+
+\begin{document}
+
+    \AtBeginSection[]{
+      \begin{frame}{~}
+      \vfill
+      \centering
+      \begin{tcolorbox}[halign=center,colframe=blueHKBU, colback=blueHKBU!5!white]
+        \usebeamerfont{title}\insertsectionhead\par%
+      \end{tcolorbox}
+      \vfill
+      \end{frame}
+    }
+    
+	\maketitle
+
+% 	\begin{frame}{Outline}
+% 		\tableofcontents
+% 	\end{frame}
+
+ 	\section{Introduction}
+	
+	\begin{frame}{Introduction}
+		Ransomware is a type of malicious softWARE when the victim is forced to pay some RANSOM to solve the consequences:
+
+		\begin{itemize}
+			\item<2-> Locker Ransomware - encrypts the whole drive and essentially locking the user out of the system.
+			\item<3-> Crypto Ransomware - encrypts and locks only specific data which seems to be important.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}{Ex. WannaCry}
+		\vspace{-0.5cm}
+		\begin{center}
+			    \pgfuseimage{img:wannacry}
+		    \end{center}
+	\end{frame}
+	
+	\begin{frame}{Four signs}
+	    Four signs:
+		\begin{enumerate}[<+->]
+			\item Splash screen blocks access - the most obvious sign.
+			\item Files that will not open - might be a sign of encryption attack on your file.
+            \item Odd or missing file extensions - this files may be masked ransomware.
+            \item Received instructions for paying the ransom - the second most obvious sign.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Guidelines}
+	    Guidelines to prevent you from this attack:
+		\begin{itemize}[<+->]
+			\item Never download files from unknown sources.
+            \item Backup your data on a regular basis.
+            \item Install the latest anti-viruses and update them periodically.
+            \item Never pay the ransom - there is no guarantee you will get your files back.
+            \item<4-> Etc.
+		\end{itemize}
+	\end{frame}
+	
+	\section{Possible Damages}
+	
+	\begin{frame}{Possible Damages}
+	    Ransomware can affect \textbf{home users} but also \textbf{Businesses}.\\
+	    \pause
+	    Possible damages:
+		\begin{enumerate}[<+->]
+		    \item Temporary or permanent loss of sensitive or proprietary information;
+		    \item Lost profits caused by downtime;
+			\item Cost of replacing compromised devices;
+			\item Reputational damage;
+			\item Recovery costs;
+			\item Potential legal penalties;
+			\item Employee training in response to attacks;
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{References}
+		\begin{itemize}
+		    \item https://www.police.gov.hk/ppp\_en/04\_crime\_matters/tcd/\\types\_11.html
+			\item https://www.metacompliance.com/blog/dangers-of-ransomware/
+			\item https://security.berkeley.edu/faq/ransomware/what-possible-impact-ransomware
+			\item https://us.norton.com/internetsecurity-malware-ransomware.html 
+            \item https://www.computerworld.com/article/3105344/4-signs-youre-a-victim-of-ransomware.html 
+
+		\end{itemize}
+	\end{frame}
+	
+% 	\begin{frame}{More models}
+% 	    There are many variants of this model like:
+%         \begin{itemize}[<+->]
+%             \item \textbf{SEIRS}\only<1>{: this model provide the Exposed(E) class where the person has the disease but it doesn’t spread it on to susceptible nodes.} \only<1,4>{This kind of model is suitable for disease with a \textbf{long incubation disease}.}\only<1>{
+%             \begin{center}
+% 			    \pgfuseimage{seirModel}
+% 		    \end{center}}
+%             \item \textbf{SIS}\only<2>{: here there are only three states and modelling disease that after the state of infection the people come back to the state of susceptible.
+%             \begin{center}
+% 			    \pgfuseimage{sisModel}
+% 		    \end{center}
+%             }
+%             \item \textbf{SIRS}\only<3>{: this one is a variant of the previous model that introduce a stage of immunity for a certain time after that the person can be infected again.
+%             \begin{center}
+% 			    \pgfuseimage{sirsModel}
+% 		    \end{center}
+%             }
+%         \end{itemize}
+
+%         \only<4>{The previous last two models are typically used to represent different \textbf{epidemics disease} such as HIV or SARS [3].}
+% 	\end{frame}
+	
+
+
+	\begin{frame}{Thanks}
+		\begin{center}
+			{\Huge \textcolor{rossoPantano}{\textbf{THANKS}}}
+		\end{center}
+		
+	\end{frame}
+
+\end{document}
